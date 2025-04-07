@@ -17,10 +17,6 @@
 			],
 			"sinks": [
 				{
-					"dataset": {
-						"referenceName": "ds_tlb_pizzas",
-						"type": "DatasetReference"
-					},
 					"name": "sink1"
 				}
 			],
@@ -37,27 +33,13 @@
 				"     ignoreNoFilesFound: false) ~> source1",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          order_id as integer,",
-				"          pizza_id as string,",
-				"          pizza_type_id as string,",
-				"          date as string,",
-				"          cantidad as string,",
-				"          unit_price as string,",
-				"          total as string",
-				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          pizza_id,",
 				"          pizza_type_id",
-				"     )) ~> sink1"
+				"     ),",
+				"     format: 'table') ~> sink1"
 			]
 		}
 	}
