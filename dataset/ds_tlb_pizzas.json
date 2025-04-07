@@ -1,0 +1,49 @@
+{
+	"name": "ds_tlb_pizzas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_pizzas_db",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DB"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pizza_id",
+				"type": "varchar"
+			},
+			{
+				"name": "pizza_type_id",
+				"type": "varchar"
+			},
+			{
+				"name": "date",
+				"type": "varchar"
+			},
+			{
+				"name": "cantidad",
+				"type": "varchar"
+			},
+			{
+				"name": "unit_price",
+				"type": "varchar"
+			},
+			{
+				"name": "total",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tbl_pizzas"
+		}
+	}
+}
